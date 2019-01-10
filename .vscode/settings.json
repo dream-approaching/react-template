@@ -1,0 +1,10 @@
+{
+  "prettier.singleQuote": true,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "emmet.triggerExpansionOnTab": true,
+  "editor.snippetSuggestions": "top",
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "svn.ignoreWorkingCopyIsTooOld": true
+}
