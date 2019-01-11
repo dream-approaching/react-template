@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Component() {
-  return <div>home</div>;
+  return <div>news</div>;
 }
