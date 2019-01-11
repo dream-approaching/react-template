@@ -1,6 +1,8 @@
-// import { combineReducers } from 'redux';
-import React from 'react';
+import { combineReducers } from 'redux';
+import news from './news/reducers';
+import login from './login/reducers';
 
-export default function Component() {
-  return <div>router</div>;
-}
+export default combineReducers({
+  news,
+  login,
+});
