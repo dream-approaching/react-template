@@ -71,6 +71,7 @@ module.exports = {
     'no-param-reassign': [0],
     'require-yield': [1],
     'no-useless-escape': [0],
+    'func-names': [0],
   },
   parserOptions: {
     ecmaFeatures: {
