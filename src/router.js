@@ -1,15 +1,15 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from 'utils/history';
-import Home from 'pages/home/index';
-import News from 'pages/news/index';
+import Login from 'pages/login/login';
+import BasicLayout from './layouts/basicLayout';
 
 function RouterConfig() {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/news" component={News} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/" render={() => <BasicLayout />} />
       </Switch>
     </Router>
   );
