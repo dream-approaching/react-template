@@ -9,12 +9,12 @@ export default function appState(state = initialState, action) {
     case actions.INCREASE:
       return {
         ...state,
-        value: action.payload + 1,
+        value: state.value + 1,
       };
     case actions.DECREASE:
       return {
         ...state,
-        value: action.payload - 1,
+        value: state.value - 1,
       };
     default:
       return state;

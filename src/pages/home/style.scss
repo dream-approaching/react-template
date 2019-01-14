@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.value {
+  margin: 0 15px;
+}

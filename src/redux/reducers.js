@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import news from './news/reducers';
-import login from './login/reducers';
+import calculator from './calculator/reducers';
 
 export default combineReducers({
-  news,
-  login,
+  calculator,
 });
