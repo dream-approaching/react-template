@@ -2,7 +2,7 @@ import actions from './actions';
 
 const initialState = {
   value: 0,
-  result: '',
+  result: 0,
 };
 
 export default function appState(state = initialState, action) {

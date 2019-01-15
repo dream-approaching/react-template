@@ -20,7 +20,7 @@ class Home extends React.Component {
   };
 
   render() {
-    const { calculator } = this.props;
+    const { calculator, global } = this.props;
     return (
       <div className={styles.containerAll}>
         <div className={styles.btnContainer}>
@@ -32,17 +32,14 @@ class Home extends React.Component {
             +
           </div>
         </div>
+        <div className={styles.result}>loading: {global.globalLoading ? 'true' : 'false'}</div>
         <div className={styles.result}>results: {calculator.result}</div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    calculator: state.calculator,
-  };
-};
+const mapStateToProps = ({ calculator, global }) => ({ calculator, global });
 
 const mapDispatchToProps = {
   increase: actions.increase,

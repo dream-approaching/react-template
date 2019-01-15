@@ -6,7 +6,7 @@ function* searchRequest({ payload }) {
   try {
     const searchResult = yield call(gitSearchApi, payload);
     console.log('searchResult:', searchResult);
-    yield put(actions.actionSuccess());
+    yield put(actions.actionSuccess(searchResult.total_count));
   } catch (error) {
     yield put(actions.actionFailed());
     console.log('err:', error);
@@ -14,5 +14,5 @@ function* searchRequest({ payload }) {
 }
 
 export default function* rootSaga() {
-  yield all([takeEvery(actions.INCREASE, searchRequest)]);
+  yield all([takeEvery([actions.INCREASE, actions.DECREASE], searchRequest)]);
 }
