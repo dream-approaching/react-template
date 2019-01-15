@@ -1,4 +1,10 @@
-.container {
+.containerAll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btnContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,4 +20,7 @@
 }
 .value {
   margin: 0 15px;
+}
+.result {
+  margin-top: 15px;
 }

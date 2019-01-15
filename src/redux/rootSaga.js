@@ -1,8 +1,7 @@
 import { all } from 'redux-saga/effects';
-import githubSearchSagas from './githubSearch/sagas';
-import ecommerceSaga from './ecommerce/saga';
+import calculatorSaga from './calculator/sagas';
 
 export default function* rootSaga(getState) {
   console.log('getState:', getState);
-  yield all([githubSearchSagas(), ecommerceSaga()]);
+  yield all([calculatorSaga()]);
 }

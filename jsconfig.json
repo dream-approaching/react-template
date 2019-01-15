@@ -5,7 +5,8 @@
     "paths": {
       "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "@redux/*": ["src/redux/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

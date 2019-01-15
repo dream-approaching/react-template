@@ -7,23 +7,32 @@ class Home extends React.Component {
   handleClick = type => {
     const { increase, decrease } = this.props;
     if (type === '-') {
-      decrease();
+      decrease({
+        per_page: 10,
+        q: 2,
+      });
     } else {
-      increase();
+      increase({
+        per_page: 10,
+        q: 1,
+      });
     }
   };
 
   render() {
     const { calculator } = this.props;
     return (
-      <div className={styles.container}>
-        <div className={styles.btn} onClick={() => this.handleClick('-')}>
-          -
+      <div className={styles.containerAll}>
+        <div className={styles.btnContainer}>
+          <div className={styles.btn} onClick={() => this.handleClick('-')}>
+            -
+          </div>
+          <div className={styles.value}>{calculator.value}</div>
+          <div className={styles.btn} onClick={() => this.handleClick('+')}>
+            +
+          </div>
         </div>
-        <div className={styles.value}>{calculator.value}</div>
-        <div className={styles.btn} onClick={() => this.handleClick('+')}>
-          +
-        </div>
+        <div className={styles.result}>results: {calculator.result}</div>
       </div>
     );
   }
@@ -35,11 +44,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    increase: () => dispatch(actions.increase()),
-    decrease: () => dispatch(actions.decrease()),
-  };
+const mapDispatchToProps = {
+  increase: actions.increase,
+  decrease: actions.decrease,
 };
 
 export default connect(
