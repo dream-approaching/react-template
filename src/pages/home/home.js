@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import actions from '@redux/calculator/actions';
 import withPureRender from 'components/withPureRender';
+import FunctionTest from './components/functionTest/index';
 import styles from './style.scss';
 
 class Home extends React.Component {
@@ -55,6 +56,7 @@ class Home extends React.Component {
         <div className={styles.result}>loading: {global.globalLoading ? 'true' : 'false'}</div>
         <div className={styles.result}>results: {calculator.result}</div>
         <div className={styles.result}>test: {test}</div>
+        <FunctionTest />
       </div>
     );
   }
