@@ -45,3 +45,10 @@
 >
 > 1.  一开始的 components 都放在 pages 下面，如果有其他页面需要用到这个组件时，再抽出来放到 src/components/下面。（为了防止需求变化，如果要删除该 page，还要到 components 里面去找到这个组件，删除的时候还不确定有没有其他页面引用。）
 > 2.  src/redux 下面的文件夹都写各自的 reducer、actions、saga 等
+
+##### errorBoundary
+
+- 然后可以写一个高阶组件，把每个文件都用 ErrorBoundary 包起来
+- 如果是继承型(class extends WrapComponent)的高阶组件，则还需要在最外层包一个 ErrorBoundary
+- 如果是代理型(class extends React.Component)的高阶组件，租不需要在最外层包 ErrorBoundary
+- 子 ErrorBoundary 触发了就不会再触发父级的 ErrorBoundary 了

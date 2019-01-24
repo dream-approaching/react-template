@@ -1,4 +1,6 @@
+import React from 'react';
 import { isEqual } from 'utils/utils';
+import ErrorBoundary from 'components/errorBoundary/errorBoundary';
 import { is } from 'immutable';
 
 const withPureRender = Component => {
@@ -42,7 +44,7 @@ const withPureRender = Component => {
     };
 
     render() {
-      return super.render();
+      return <ErrorBoundary>{super.render()}</ErrorBoundary>;
     }
   }
 

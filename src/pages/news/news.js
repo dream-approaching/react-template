@@ -1,8 +1,9 @@
 import React from 'react';
 import Modal from 'components/modal/modal';
+import withPureRender from 'components/withPureRender';
 import styles from './style.scss';
 
-export default class extends React.Component {
+class News extends React.Component {
   state = {
     showModal: false,
   };
@@ -41,3 +42,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default withPureRender(News);
