@@ -15,11 +15,19 @@ export default class extends React.Component {
     this.setState({ showModal: false });
   };
 
+  handleForceRender = () => {
+    this.forceUpdate(() => {
+      console.log('强制刷新');
+    });
+  };
+
   render() {
     const { showModal } = this.state;
+    console.log('news render');
     return (
       <div>
         <div onClick={this.handleShowModal}>click me to showModal</div>
+        <div onClick={this.handleForceRender}>强制刷新</div>
         {showModal && (
           <Modal>
             <div className={styles.modalCon}>
