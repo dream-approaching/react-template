@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import actions from '@redux/calculator/actions';
 import withPureRender from 'components/withPureRender';
-import { Button } from 'antd';
+import { Button, Icon } from 'antd';
 import FunctionTest from './components/functionTest/index';
 import ClassTest from './components/classTest/index';
 import styles from './style.scss';
@@ -55,6 +55,7 @@ class Home extends React.Component {
             +
           </div>
         </div>
+        <Icon type="star" theme="filled" />
         <div className={styles.result}>loading: {global.globalLoading ? 'true' : 'false'}</div>
         <div className={styles.result}>results: {calculator.result}</div>
         <div className={styles.result}>test: {test}</div>

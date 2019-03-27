@@ -19,6 +19,7 @@ const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
@@ -282,6 +283,11 @@ module.exports = function(webpackEnv) {
       rules: [
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
+        {
+          loader: 'webpack-ant-icon-loader',
+          enforce: 'pre',
+          include: [path.resolve('node_modules/@ant-design/icons/lib/dist')],
+        },
 
         // First, run the linter.
         // It's important to do this before Babel processes the JS.
@@ -481,6 +487,7 @@ module.exports = function(webpackEnv) {
             : undefined
         )
       ),
+      process.env.analyze && new BundleAnalyzerPlugin(),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&
