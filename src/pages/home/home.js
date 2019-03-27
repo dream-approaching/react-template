@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import actions from '@redux/calculator/actions';
 import withPureRender from 'components/withPureRender';
+import { Button } from 'antd';
 import FunctionTest from './components/functionTest/index';
 import ClassTest from './components/classTest/index';
 import styles from './style.scss';
@@ -46,9 +47,9 @@ class Home extends React.Component {
     return (
       <div className={styles.containerAll}>
         <div className={styles.btnContainer}>
-          <div className={styles.btn} onClick={() => this.handleClick('-')}>
+          <Button className={styles.btn} onClick={() => this.handleClick('-')}>
             -
-          </div>
+          </Button>
           <div className={styles.value}>{calculator.value}</div>
           <div className={styles.btn} onClick={() => this.handleClick('+')}>
             +
