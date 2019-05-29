@@ -90,6 +90,10 @@ module.exports = function(webpackEnv) {
               },
               stage: 3,
             }),
+            require('postcss-pxtorem')({
+              rootValue: 100,
+              propWhiteList: [], // Enables converting of all properties – default is just font sizes.
+            }),
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
